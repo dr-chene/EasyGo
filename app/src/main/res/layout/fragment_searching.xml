@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="backClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="eatClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="hotelClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="sightClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="gasClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="toiletClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="shopClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/fragment_search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/activity_main_bottom_sheet_normal_search_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_back"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_margin="15dp"
+                android:onClick="@{backClick}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_search_bar"
+                app:layout_constraintStart_toStartOf="@id/fragment_search_bar"
+                app:layout_constraintTop_toTopOf="@id/fragment_search_bar" />
+
+            <EditText
+                android:id="@+id/fragment_searching_et_search_bar"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#00FFFFFF"
+                android:hint="@string/fragment_searching_et_text"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@+id/fragment_search_bar"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_searching_progress_bar_load"
+                app:layout_constraintStart_toEndOf="@+id/fragment_searching_iv_back"
+                app:layout_constraintTop_toTopOf="@+id/fragment_search_bar" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_eat"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="15dp"
+                android:onClick="@{eatClick}"
+                android:src="@drawable/ic_activity_main_bottom_sheet_searching_eat"
+                app:layout_constraintEnd_toStartOf="@id/fragment_searching_iv_hotel"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fragment_search_bar" />
+
+            <TextView
+                android:id="@+id/fragment_searching_tv_eat"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="@{eatClick}"
+                android:text="@string/fragment_searching_tv_eat"
+                app:layout_constraintEnd_toEndOf="@id/fragment_searching_iv_eat"
+                app:layout_constraintStart_toStartOf="@id/fragment_searching_iv_eat"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_iv_eat" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_hotel"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{hotelClick}"
+                android:src="@drawable/ic_activity_main_bottom_sheet_searching_hotel"
+                app:layout_constraintEnd_toStartOf="@id/fragment_searching_iv_sight"
+                app:layout_constraintStart_toEndOf="@id/fragment_searching_iv_eat"
+                app:layout_constraintTop_toTopOf="@id/fragment_searching_iv_eat" />
+
+            <TextView
+                android:id="@+id/fragment_searching_tv_hotel"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="@{hotelClick}"
+                android:text="@string/fragment_searching_tv_hotel"
+                app:layout_constraintEnd_toEndOf="@id/fragment_searching_iv_hotel"
+                app:layout_constraintStart_toStartOf="@id/fragment_searching_iv_hotel"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_iv_hotel" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_sight"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{sightClick}"
+                android:src="@drawable/ic_activity_main_bottom_sheet_searching_sight"
+                app:layout_constraintEnd_toStartOf="@id/fragment_searching_iv_gas"
+                app:layout_constraintStart_toEndOf="@id/fragment_searching_iv_hotel"
+                app:layout_constraintTop_toTopOf="@id/fragment_searching_iv_hotel" />
+
+            <TextView
+                android:id="@+id/fragment_searching_tv_sight"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="@{sightClick}"
+                android:text="@string/fragment_searching_tv_sight"
+                app:layout_constraintEnd_toEndOf="@id/fragment_searching_iv_sight"
+                app:layout_constraintStart_toStartOf="@id/fragment_searching_iv_sight"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_iv_sight" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_gas"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{gasClick}"
+                android:src="@drawable/ic_activity_main_bottom_sheet_searching_gas"
+                app:layout_constraintEnd_toStartOf="@id/fragment_searching_iv_toilet"
+                app:layout_constraintStart_toEndOf="@id/fragment_searching_iv_sight"
+                app:layout_constraintTop_toTopOf="@id/fragment_searching_iv_sight" />
+
+            <TextView
+                android:id="@+id/fragment_searching_tv_gas"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="@{gasClick}"
+                android:text="@string/fragment_searching_tv_gas"
+                app:layout_constraintEnd_toEndOf="@id/fragment_searching_iv_gas"
+                app:layout_constraintStart_toStartOf="@id/fragment_searching_iv_gas"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_iv_gas" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_toilet"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{toiletClick}"
+                android:src="@drawable/ic_activity_main_bottom_sheet_searching_toilet"
+                app:layout_constraintEnd_toStartOf="@id/fragment_searching_iv_shop"
+                app:layout_constraintStart_toEndOf="@id/fragment_searching_iv_gas"
+                app:layout_constraintTop_toTopOf="@id/fragment_searching_iv_gas" />
+
+            <TextView
+                android:id="@+id/fragment_searching_tv_toilet"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:onClick="@{toiletClick}"
+                android:text="@string/fragment_searching_tv_toilet"
+                app:layout_constraintEnd_toEndOf="@id/fragment_searching_iv_toilet"
+                app:layout_constraintStart_toStartOf="@id/fragment_searching_iv_toilet"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_iv_toilet" />
+
+            <ImageView
+                android:id="@+id/fragment_searching_iv_shop"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:onClick="@{shopClick}"
+                android:src="@drawable/ic_activity_main_bottom_sheet_searching_shop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/fragment_searching_iv_toilet"
+                app:layout_constraintTop_toTopOf="@id/fragment_searching_iv_toilet" />
+
+            <TextView
+                android:id="@+id/fragment_searching_tv_shop"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="15dp"
+                android:onClick="@{shopClick}"
+                android:text="@string/fragment_searching_tv_shop"
+                app:layout_constraintEnd_toEndOf="@id/fragment_searching_iv_shop"
+                app:layout_constraintStart_toStartOf="@id/fragment_searching_iv_shop"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_iv_shop" />
+
+            <View
+                android:id="@+id/fragment_searching_divide"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color_search_bar_bg"
+                app:layout_constraintTop_toBottomOf="@id/fragment_searching_tv_eat" />
+
+            <ProgressBar
+                android:id="@+id/fragment_searching_progress_bar_load"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/fragment_search_bar"
+                app:layout_constraintEnd_toEndOf="@id/fragment_search_bar"
+                app:layout_constraintTop_toTopOf="@id/fragment_search_bar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_searching_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="backClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_route_iv_back"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_margin="20dp"
+            android:onClick="@{backClick}"
+            android:src="@drawable/ic_fragment_route_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fragment_route_tv_cost_time"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:singleLine="true"
+            app:layout_constraintStart_toEndOf="@id/fragment_route_iv_back"
+            app:layout_constraintTop_toTopOf="@id/fragment_route_iv_back"
+            tool:text="45分钟（约4公里）" />
+
+        <TextView
+            android:id="@+id/fragment_route_tv_taxi_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/fragment_route_tv_cost_time"
+            app:layout_constraintTop_toBottomOf="@id/fragment_route_tv_cost_time"
+            tool:text="打车约六十元" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toTopOf="@id/fragment_route_rv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_route_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_route_tv_taxi_cost"
+            tool:listitem="@layout/recycle_item_route" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

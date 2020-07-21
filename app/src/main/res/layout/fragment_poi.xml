@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="poi"
+            type="com.amap.api.services.core.PoiItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fragment_poi_tv_name"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:lines="1"
+            android:text="@{poi.title}"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="重庆邮电大学" />
+
+        <TextView
+            android:id="@+id/fragment_poi_tv_distance"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            setDistance="@{poi}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            app:layout_constraintStart_toStartOf="@id/fragment_poi_tv_name"
+            app:layout_constraintTop_toBottomOf="@id/fragment_poi_tv_name"
+            tool:text="869米" />
+
+        <View
+            android:id="@+id/fragment_poi_short_line"
+            android:layout_width="0.1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_poi_tv_distance"
+            app:layout_constraintStart_toEndOf="@id/fragment_poi_tv_distance"
+            app:layout_constraintTop_toTopOf="@id/fragment_poi_tv_distance" />
+
+        <TextView
+            android:id="@+id/fragment_poi_tv_address"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{poi.snippet}"
+            app:layout_constraintEnd_toStartOf="@id/fragment_poi_long_line"
+            app:layout_constraintStart_toEndOf="@id/fragment_poi_short_line"
+            app:layout_constraintTop_toTopOf="@id/fragment_poi_tv_distance"
+            tool:text="重庆市南岸区崇文路2号" />
+
+        <TextView
+            android:id="@+id/fragment_poi_tv_type"
+            setOneTypeDes="@{poi}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            app:layout_constraintStart_toStartOf="@id/fragment_poi_tv_distance"
+            app:layout_constraintTop_toBottomOf="@id/fragment_poi_tv_distance"
+            tool:text="高校" />
+
+        <View
+            android:id="@+id/fragment_poi_long_line"
+            android:layout_width="0.1dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_poi_tv_type"
+            app:layout_constraintEnd_toStartOf="@id/fragment_poi_iv_tel"
+            app:layout_constraintTop_toTopOf="@id/fragment_poi_tv_distance" />
+
+        <ImageView
+            android:id="@+id/fragment_poi_iv_tel"
+            setCallClick="@{poi}"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/ic_activity_main_bottom_sheet_point_tel"
+            app:layout_constraintBottom_toTopOf="@id/fragment_poi_tv_tel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fragment_poi_tv_distance"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/fragment_poi_tv_tel"
+            style="@style/TextAppearance.AppCompat.Small"
+            setCallClick="@{poi}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/fragment_poi_call_text"
+            android:textColor="#0a7ad5"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_poi_tv_type"
+            app:layout_constraintEnd_toEndOf="@id/fragment_poi_iv_tel"
+            app:layout_constraintStart_toStartOf="@id/fragment_poi_iv_tel"
+            app:layout_constraintTop_toBottomOf="@id/fragment_poi_iv_tel" />
+
+        <View
+            android:id="@+id/fragment_poi_split_line"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/color_search_bar_bg"
+            app:layout_constraintTop_toBottomOf="@id/fragment_poi_tv_type" />
+
+        <ImageView
+            android:id="@+id/fragment_poi_iv_cover"
+            imageFromUrl="@{poi}"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:src="@color/color_line_bg"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_poi_split_line" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_province_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@{poi.provinceName}"
+            app:layout_constraintStart_toEndOf="@id/fragment_poi_iv_cover"
+            app:layout_constraintTop_toBottomOf="@id/fragment_poi_split_line"
+            tool:text="重庆市" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@{poi.cityName}"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_tv_province_name"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_province_name"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_province_name"
+            tool:text="重庆市" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_ad_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@{poi.adName}"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_tv_city_name"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_city_name"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_city_name"
+            tool:text="北陪区" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_business_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{poi.businessArea}"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_tv_province_name"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_tv_province_name"
+            tool:text="北陪区" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_snippet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:lines="2"
+            android:text="@{poi.snippet}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_tv_business_area"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_tv_business_area"
+            tool:text="冯时行路300号万达广场1A层025A" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_type_des"
+            setAllTypeDes="@{poi}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_tv_snippet"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_tv_snippet"
+            tool:text="冯时行路300号万达广场1A层025A" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

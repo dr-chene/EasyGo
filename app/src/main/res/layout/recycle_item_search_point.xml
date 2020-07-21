@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="deleteClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="routeClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/recycle_item_search_history_point_iv_point"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_point"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recycle_item_search_history_point_name"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:onClick="@{itemClick}"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/recycle_item_search_history_point_guideline"
+            app:layout_constraintEnd_toStartOf="@id/recycle_item_search_history_iv_route"
+            app:layout_constraintStart_toStartOf="parent"
+            tool:text="地名特别长" />
+
+        <TextView
+            android:id="@+id/recycle_item_search_history_point_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:onClick="@{itemClick}"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/recycle_item_search_history_iv_route"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_search_history_point_name"
+            app:layout_constraintTop_toBottomOf="@id/recycle_item_search_history_point_guideline"
+            tool:text="地址描述，很不错，建议" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/recycle_item_search_history_point_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/recycle_item_search_history_iv_route"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{routeClick}"
+            android:src="@drawable/ic_recycle_item_search_route"
+            app:layout_constraintBottom_toTopOf="@id/recycle_item_search_history_tv_route"
+            app:layout_constraintEnd_toStartOf="@id/recycle_item_search_history_iv_delete"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/recycle_item_search_history_tv_route"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{routeClick}"
+            android:text="@string/recycle_item_search_history_point_route"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/recycle_item_search_history_iv_route"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_search_history_iv_route"
+            app:layout_constraintTop_toBottomOf="@id/recycle_item_search_history_iv_route" />
+
+        <ImageView
+            android:id="@+id/recycle_item_search_history_iv_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{deleteClick}"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toTopOf="@id/recycle_item_search_history_tv_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/recycle_item_search_history_tv_delete"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{deleteClick}"
+            android:text="@string/recycle_item_search_history_text_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/recycle_item_search_history_iv_delete"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_search_history_iv_delete"
+            app:layout_constraintTop_toTopOf="@id/recycle_item_search_history_tv_route" />
+
+        <View
+            android:id="@+id/recycle_item_search_history_point_split_line"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_search_history_point_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

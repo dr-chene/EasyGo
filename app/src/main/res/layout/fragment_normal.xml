@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="searchClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="carClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="busClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="walkClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="bikeClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="centerClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="offlineClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToAdd_1"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToAdd_2"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToAdd_3"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToAdd_4"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToAdd_5"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToAdd_6"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToDelete_1"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToDelete_2"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToDelete_3"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToDelete_4"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToDelete_5"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickToDelete_6"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="clickChange"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_main_bottom_sheet_normal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_center"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:onClick="@{centerClick}"
+            android:src="@drawable/ic_activity_main_bottom_sheet_normal_center"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_search_card_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/fragment_normal_search_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/activity_main_bottom_sheet_normal_search_bg"
+            android:onClick="@{searchClick}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/ic_search" />
+
+            <TextView
+                android:id="@+id/fragment_normal_et_search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/fragment_normal_search_tv"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_car"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:onClick="@{carClick}"
+            android:src="@drawable/ic_activity_main_bottom_sheet_normal_car"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_iv_bus"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_search_card_view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{carClick}"
+            android:text="@string/fragment_normal_car_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_iv_car"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_iv_car"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_bus" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_bus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="@{busClick}"
+            android:src="@drawable/ic_activity_main_bottom_sheet_normal_bus"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_iv_car"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_walk"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_iv_car"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_iv_car" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{busClick}"
+            android:text="@string/fragment_normal_bus_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_iv_bus"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_iv_bus"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_iv_bus" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_tv_walk"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="@{walkClick}"
+            android:src="@drawable/ic_activity_main_bottom_sheet_normal_walk"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_iv_bus"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_iv_bike"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_iv_bus"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_iv_bus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{walkClick}"
+            android:text="@string/fragment_normal_walk_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_walk"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_tv_walk"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_bus" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_bike"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="@{bikeClick}"
+            android:src="@drawable/ic_activity_main_bottom_sheet_normal_bike"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_tv_walk"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_iv_offline"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_walk"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_walk" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{bikeClick}"
+            android:text="@string/fragment_normal_bike_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_iv_bike"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_iv_bike"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_bus" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_offline"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="@{offlineClick}"
+            android:src="@drawable/ic_activity_main_bottom_sheet_normal_offline"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_iv_bike"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_iv_bike"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_iv_bike" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{offlineClick}"
+            android:text="@string/fragment_normal_offline_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_iv_offline"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_iv_offline"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_bus" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/fragment_normal_where_go_often"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_tv_bus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:onClick="@{clickChange}"
+            android:text="@string/fragment_normal_click_to_change"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_1"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <View
+            android:id="@+id/fragment_normal_horizontal_split_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_tv_often_go" />
+
+        <View
+            android:id="@+id/fragment_normal_horizontal_split_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <View
+            android:id="@+id/fragment_normal_horizontal_split_line_3"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_2" />
+
+        <View
+            android:id="@+id/fragment_normal_horizontal_split_line_4"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_3" />
+
+        <View
+            android:id="@+id/fragment_normal_vertical_split_line_1"
+            android:layout_width="0.1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_1"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_1"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <View
+            android:id="@+id/fragment_normal_vertical_split_line_2"
+            android:layout_width="0.1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_2" />
+
+        <View
+            android:id="@+id/fragment_normal_vertical_split_line_3"
+            android:layout_width="0.1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_horizontal_split_line_4"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_3" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_activity_main_fragment_normal_point"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_often_go_1"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_1"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_delete_1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:onClick="@{clickToDelete_1}"
+            android:src="@drawable/ic_fragment_normal_iv_delete_often_go"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_tv_often_go_1"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_often_go_1"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_often_go_1"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_often_go_1" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:onClick="@{clickToAdd_1}"
+            android:singleLine="true"
+            android:text="@string/fragment_normal_click_to_add"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_vertical_split_line_1"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_1"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_activity_main_fragment_normal_point"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_often_go_2"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_vertical_split_line_1"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_delete_2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:onClick="@{clickToDelete_2}"
+            android:src="@drawable/ic_fragment_normal_iv_delete_often_go"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_tv_often_go_2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_often_go_2"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_often_go_2"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_often_go_2" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:onClick="@{clickToAdd_2}"
+            android:singleLine="true"
+            android:text="@string/fragment_normal_click_to_add"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_1"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_vertical_split_line_1"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_1" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_activity_main_fragment_normal_point"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_often_go_3"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_2" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_delete_3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:onClick="@{clickToDelete_3}"
+            android:src="@drawable/ic_fragment_normal_iv_delete_often_go"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_tv_often_go_3"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_often_go_3"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_often_go_3"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_often_go_3" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:onClick="@{clickToAdd_3}"
+            android:singleLine="true"
+            android:text="@string/fragment_normal_click_to_add"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_vertical_split_line_2"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_2" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_activity_main_fragment_normal_point"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_often_go_4"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_vertical_split_line_2"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_2" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_delete_4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:onClick="@{clickToDelete_4}"
+            android:src="@drawable/ic_fragment_normal_iv_delete_often_go"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_tv_often_go_4"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_often_go_4"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_often_go_4"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_often_go_4" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:onClick="@{clickToAdd_4}"
+            android:singleLine="true"
+            android:text="@string/fragment_normal_click_to_add"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_2"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_vertical_split_line_2"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_2" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_activity_main_fragment_normal_point"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_normal_horizontal_split_line_4"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_often_go_5"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_3" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_delete_5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:onClick="@{clickToDelete_5}"
+            android:src="@drawable/ic_fragment_normal_iv_delete_often_go"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_tv_often_go_5"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_often_go_5"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_often_go_5"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_often_go_5" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:onClick="@{clickToAdd_5}"
+            android:singleLine="true"
+            android:text="@string/fragment_normal_click_to_add"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_4"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_vertical_split_line_3"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_3" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_activity_main_fragment_normal_point"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_4"
+            app:layout_constraintEnd_toStartOf="@id/fragment_normal_tv_often_go_6"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_vertical_split_line_3"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_3" />
+
+        <ImageView
+            android:id="@+id/fragment_normal_iv_delete_6"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:onClick="@{clickToDelete_6}"
+            android:src="@drawable/ic_fragment_normal_iv_delete_often_go"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_tv_often_go_6"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_tv_often_go_6"
+            app:layout_constraintStart_toEndOf="@id/fragment_normal_tv_often_go_6"
+            app:layout_constraintTop_toTopOf="@id/fragment_normal_tv_often_go_6" />
+
+        <TextView
+            android:id="@+id/fragment_normal_tv_often_go_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:onClick="@{clickToAdd_6}"
+            android:singleLine="true"
+            android:text="@string/fragment_normal_click_to_add"
+            app:layout_constraintBottom_toTopOf="@id/fragment_normal_horizontal_split_line_4"
+            app:layout_constraintEnd_toEndOf="@id/fragment_normal_horizontal_split_line_3"
+            app:layout_constraintStart_toStartOf="@id/fragment_normal_vertical_split_line_3"
+            app:layout_constraintTop_toBottomOf="@id/fragment_normal_horizontal_split_line_3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

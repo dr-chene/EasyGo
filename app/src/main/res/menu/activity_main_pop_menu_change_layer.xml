@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pop_menu_navigation"
+        android:title="@string/activity_main_pop_menu_change_layer_navigation"/>
+    <item
+        android:id="@+id/pop_menu_night"
+        android:title="@string/activity_main_pop_menu_change_layer_night"/>
+    <item
+        android:id="@+id/pop_menu_normal"
+        android:title="@string/activity_main_pop_menu_change_layer_normal"/>
+    <item
+        android:id="@+id/pop_menu_satellite"
+        android:title="@string/activity_main_pop_menu_change_layer_satellite"/>
+
+</menu>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{itemClick}">
+
+        <ImageView
+            android:id="@+id/recycle_item_travel_pop_window_Iv_point"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/ic_point"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/recycle_item_travel_pop_window_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/recycle_item_travel_pop_window_tv_title"
+            style="@style/TextAppearance.AppCompat.SearchResult.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="100dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/recycle_item_travel_pop_window_guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recycle_item_travel_pop_window_Iv_point"
+            tool:text="地名，详细的地名" />
+
+        <ImageView
+            android:id="@+id/recycle_item_travel_pop_window_Iv_direction"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_recycle_item_activity_travel_pop_window_direction"
+            app:layout_constraintStart_toEndOf="@id/recycle_item_travel_pop_window_Iv_point"
+            app:layout_constraintTop_toBottomOf="@id/recycle_item_travel_pop_window_guideline" />
+
+        <TextView
+            android:id="@+id/recycle_item_travel_pop_window_tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recycle_item_travel_pop_window_Iv_direction"
+            app:layout_constraintTop_toBottomOf="@id/recycle_item_travel_pop_window_guideline"
+            app:layout_constraintTop_toTopOf="@id/recycle_item_travel_pop_window_Iv_direction"
+            tool:text="地名，详细的很长的位置" />
+
+        <View
+            android:id="@+id/recycle_item_travel_pop_window_split_line"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_travel_pop_window_Iv_direction" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

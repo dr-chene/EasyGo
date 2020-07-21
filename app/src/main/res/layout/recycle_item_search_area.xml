@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="deleteClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/recycle_item_search_area_iv"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recycle_item_search_history_area_name"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="50dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:onClick="@{itemClick}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/recycle_item_search_history_area_iv_delete"
+            app:layout_constraintStart_toEndOf="@id/recycle_item_search_area_iv"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="红岩网校" />
+
+        <ImageView
+            android:id="@+id/recycle_item_search_history_area_iv_delete"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{deleteClick}"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toTopOf="@id/recycle_item_search_history_area_tv_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/recycle_item_search_history_area_tv_delete"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:onClick="@{deleteClick}"
+            android:text="@string/recycle_item_search_history_text_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/recycle_item_search_history_area_iv_delete"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_search_history_area_iv_delete"
+            app:layout_constraintTop_toBottomOf="@id/recycle_item_search_history_area_iv_delete" />
+
+        <View
+            android:id="@+id/recycle_item_search_history_area_split_line"
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:background="@color/color_line_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/recycle_item_search_history_area_name" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
